@@ -1,4 +1,4 @@
-# demos
+# Examples
 A central repo where many demos using the Cohere API will live.
 
 ## How to add a new Streamlit project
