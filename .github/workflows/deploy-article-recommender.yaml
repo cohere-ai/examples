@@ -1,0 +1,43 @@
+name: Deploy Streamlit App "Article Recommender"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - article-recommender/**
+
+jobs:
+  deploy-article-recommender:
+    name: Deploy Article Recommender
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        id: checkout
+        uses: actions/checkout@v2
+
+      - name: Create app.yaml
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: article-recommender/app.yaml.jinja
+          output_file: article-recommender/app.yaml
+          strict: true
+          variables: |
+            CO_KEY=${{ secrets.COHERE_API_KEY }}
+
+      - name: Auth
+        id: auth
+        uses: google-github-actions/auth@v0
+        with:
+          credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+
+      - name: Deploy
+        id: deploy
+        uses: google-github-actions/deploy-appengine@v0
+        with:
+          deliverables: article-recommender/app.yaml
+
+      - name: Healthcheck
+        id: curl-api
+        run: curl "${{ steps.deploy.outputs.url }}/healthz"

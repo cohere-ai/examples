@@ -1,0 +1,9 @@
+streamlit
+cohere
+pillow
+torch
+torchvision
+torchaudio
+numpy
+PyPDF2
+st-clickable-images
