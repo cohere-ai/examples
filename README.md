@@ -56,7 +56,7 @@ jobs:
           output_file: PUT-YOUR-APP-NAME-HERE/app.yaml
           strict: true
           variables: |
-            CO_KEY=${{ secrets.COHERE_API_KEY }}
+            COHERE_API_KEY=${{ secrets.COHERE_API_KEY }}
             # More environment variables go here
 
       - name: Auth
