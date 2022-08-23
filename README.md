@@ -21,7 +21,8 @@ automatic_scaling:
   max_num_instances: 1
 
 env_variables:
-  CO_KEY: {{ CO_KEY }}
+  # Check the environment variables this streamlit expects. Here we assume that it expects the cohere api key to be stored in the variable CO_KEY
+  CO_KEY: {{ COHERE_API_KEY }}
   # More environment variables go here
 
 ```
