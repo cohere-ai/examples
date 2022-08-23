@@ -57,7 +57,7 @@ jobs:
           strict: true
           variables: |
             COHERE_API_KEY=${{ secrets.COHERE_API_KEY }}
-            # More environment variables go here
+            # This will replace variables in the .jinja file. Add all the variables here. 
 
       - name: Auth
         id: auth
