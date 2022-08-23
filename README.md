@@ -21,13 +21,13 @@ automatic_scaling:
   max_num_instances: 1
 
 env_variables:
-  CO_KEY: {{ CO_KEY }}
+  # Check the environment variables this streamlit expects. Here we assume that it expects the cohere api key to be stored in the variable CO_KEY
+  CO_KEY: {{ COHERE_API_KEY }}
   # More environment variables go here
 
 ```
 
-3. Create a github actions workflow file `.github/workflows/deploy-PUT-YOUR-APP-NAME-HERE.yaml`
-
+3. In the root of the repository there is a directory called `./github/workflows/` inside that directory create a file `deploy-PUT-YOUR-APP-NAME-HERE.yaml`
 The contents of that file should look like this:
 
 ```
@@ -56,8 +56,8 @@ jobs:
           output_file: PUT-YOUR-APP-NAME-HERE/app.yaml
           strict: true
           variables: |
-            CO_KEY=${{ secrets.COHERE_API_KEY }}
-            # More environment variables go here
+            COHERE_API_KEY=${{ secrets.COHERE_API_KEY }}
+            # This will replace variables in the .jinja file. Add all the variables here. 
 
       - name: Auth
         id: auth
@@ -70,7 +70,6 @@ jobs:
         uses: google-github-actions/deploy-appengine@v0
         with:
           deliverables: PUT-YOUR-APP-NAME-HERE/app.yaml
-          project_id: "${{ secrets.GCP_PROJECT }}"
 
       - name: Healthcheck
         id: curl-api
