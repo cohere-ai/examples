@@ -6,7 +6,7 @@ import cohere
 import os
 from sklearn.metrics.pairwise import cosine_similarity
 
-api_key = os.environ["api_key"] # add the api key to the environment
+api_key = os.environ["CO_KEY"] # add the api key to the environment
 co = cohere.Client(api_key)
 
 # Perform classification - Finetune option
