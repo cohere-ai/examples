@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy-toxic-rephraser:
-    name: Deploy toxic-rephraser
+    name: Deploy Toxic Rephraser
     runs-on: ubuntu-latest
 
     steps:
@@ -24,7 +24,6 @@ jobs:
           strict: true
           variables: |
             CO_KEY=${{ secrets.COHERE_API_KEY }}
-            # More environment variables go here
 
       - name: Auth
         id: auth
