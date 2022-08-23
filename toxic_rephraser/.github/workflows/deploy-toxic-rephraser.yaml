@@ -37,7 +37,6 @@ jobs:
         uses: google-github-actions/deploy-appengine@v0
         with:
           deliverables: toxic-rephraser/app.yaml
-          project_id: "${{ secrets.GCP_PROJECT }}"
 
       - name: Healthcheck
         id: curl-api
