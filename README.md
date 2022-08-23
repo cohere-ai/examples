@@ -70,7 +70,6 @@ jobs:
         uses: google-github-actions/deploy-appengine@v0
         with:
           deliverables: PUT-YOUR-APP-NAME-HERE/app.yaml
-          project_id: "${{ secrets.GCP_PROJECT }}"
 
       - name: Healthcheck
         id: curl-api
