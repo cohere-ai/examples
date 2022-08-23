@@ -26,8 +26,7 @@ env_variables:
 
 ```
 
-3. Create a github actions workflow file `.github/workflows/deploy-PUT-YOUR-APP-NAME-HERE.yaml`
-
+3. In the root of the repository there is a directory called `./github/workflows/` inside that directory create a file `deploy-PUT-YOUR-APP-NAME-HERE.yaml`
 The contents of that file should look like this:
 
 ```
