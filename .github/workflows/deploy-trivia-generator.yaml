@@ -1,0 +1,53 @@
+name: Deploy NodeJS App "Trivia Generator"
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - trivia-generator/**
+
+jobs:
+  deploy-trivia-generator:
+    name: Deploy Trivia Generator
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        id: checkout
+        uses: actions/checkout@v2
+
+      - name: Create app.yaml
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: trivia-generator/app.yaml.jinja
+          output_file: trivia-generator/app.yaml
+          strict: true
+          variables: |
+            COHERE_API_KEY=${{ secrets.COHERE_API_KEY }}
+            DISCORD_TOKEN=${{ secrets.TRIVIA_GENERATOR_DISCORD_TOKEN }}
+            SLACK_SECRET=${{ secrets.TRIVIA_GENERATOR_SLACK_SECRET }}
+            SLACK_TOKEN=${{ secrets.TRIVIA_GENERATOR_SLACK_TOKEN }}
+
+      - name: Install Dependencies
+        run: npm ci
+        working-directory: trivia-generator
+
+      - name: Build App
+        run: npm run build
+        working-directory: trivia-generator
+
+      - name: Auth
+        id: auth
+        uses: google-github-actions/auth@v0
+        with:
+          credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+
+      - name: Deploy
+        id: deploy
+        uses: google-github-actions/deploy-appengine@v0
+        with:
+          deliverables: trivia-generator/app.yaml
+
+      - name: Healthcheck
+        id: curl-api
+        run: curl "${{ steps.deploy.outputs.url }}/health"
