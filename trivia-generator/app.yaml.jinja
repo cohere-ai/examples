@@ -1,0 +1,11 @@
+runtime: nodejs16
+env: standard
+
+automatic_scaling:
+  max_num_instances: 1
+
+env_variables:
+  COHERE_API_KEY: {{ COHERE_API_KEY }}
+  DISCORD_TOKEN: {{ DISCORD_TOKEN }}
+  SLACK_SECRET: {{ SLACK_SECRET }}
+  SLACK_TOKEN: {{ SLACK_TOKEN }}
