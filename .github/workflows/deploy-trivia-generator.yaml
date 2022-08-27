@@ -9,6 +9,7 @@ jobs:
   deploy-trivia-generator:
     name: Deploy Trivia Generator
     runs-on: ubuntu-latest
+    working-directory: trivia-generator
 
     steps:
       - name: Checkout Code
@@ -18,8 +19,8 @@ jobs:
       - name: Create app.yaml
         uses: cuchi/jinja2-action@v1.2.0
         with:
-          template: trivia-generator/app.yaml.jinja
-          output_file: trivia-generator/app.yaml
+          template: app.yaml.jinja
+          output_file: app.yaml
           strict: true
           variables: |
             COHERE_API_KEY=${{ secrets.COHERE_API_KEY }}
@@ -43,7 +44,7 @@ jobs:
         id: deploy
         uses: google-github-actions/deploy-appengine@v0
         with:
-          deliverables: trivia-generator/app.yaml
+          deliverables: app.yaml
 
       - name: Healthcheck
         id: curl-api
