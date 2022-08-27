@@ -1,15 +1,15 @@
 name: Deploy NodeJS App "Trivia Generator"
 
-on:
-  push:
-    paths:
-      - trivia-generator/**
+on: push
+# on:
+#   push:
+#     paths:
+#       - trivia-generator/**
 
 jobs:
   deploy-trivia-generator:
     name: Deploy Trivia Generator
     runs-on: ubuntu-latest
-    working-directory: trivia-generator
 
     steps:
       - name: Checkout Code
@@ -19,8 +19,8 @@ jobs:
       - name: Create app.yaml
         uses: cuchi/jinja2-action@v1.2.0
         with:
-          template: app.yaml.jinja
-          output_file: app.yaml
+          template: trivia-generator/app.yaml.jinja
+          output_file: trivia-generator/app.yaml
           strict: true
           variables: |
             COHERE_API_KEY=${{ secrets.COHERE_API_KEY }}
@@ -30,9 +30,11 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci
+        working-directory: trivia-generator
 
       - name: Build App
         run: npm run build
+        working-directory: trivia-generator
 
       - name: Auth
         id: auth
@@ -44,7 +46,7 @@ jobs:
         id: deploy
         uses: google-github-actions/deploy-appengine@v0
         with:
-          deliverables: app.yaml
+          deliverables: trivia-generator/app.yaml
 
       - name: Healthcheck
         id: curl-api
