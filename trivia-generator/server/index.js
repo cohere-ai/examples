@@ -38,7 +38,7 @@ const startApp = async () => {
     res.json(response.body);
   });
 
-  app.get("*", (req, res) => {
+  app.get("*", (_, res) => {
     res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
   });
 
