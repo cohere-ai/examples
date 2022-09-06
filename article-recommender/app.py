@@ -1,12 +1,7 @@
-import cohere
 import numpy as np
 import pandas as pd
 import streamlit as st
 import recommender as rec
-import os
-
-api_key = os.environ["CO_KEY"]
-co = cohere.Client(api_key)
 
 st.set_page_config(layout="wide")
 
@@ -84,3 +79,4 @@ with col4:
 
         if count == SHOW_TOP:
             break
+        
