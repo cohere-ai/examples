@@ -79,4 +79,3 @@ with col4:
 
         if count == SHOW_TOP:
             break
-        
