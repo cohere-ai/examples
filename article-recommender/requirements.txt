@@ -1,0 +1,5 @@
+cohere
+streamlit
+pandas
+numpy
+sklearn
