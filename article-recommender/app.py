@@ -20,7 +20,7 @@ titles = df["title"].tolist()
 embs = np.load("embeddings_bbc.npy")
 
 # # Option 2 - Use this to generate new embeddings
-# embeddings = rec.embed_text(articles)
+# embs = rec.embed_text(articles)
 
 # Title
 st.header("Article Recommender")
