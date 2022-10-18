@@ -1,0 +1,20 @@
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# npm lockfile
+package-lock.json
+
+# Next.js build output
+/.next/
+/out/
+
+# Vercel secrets
+.vercel
+
+# Secret env vars
+.env*.local
