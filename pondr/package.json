@@ -16,7 +16,6 @@
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx}\"",
     "?format:write": "Format all incorrectly-formatted source files and writes them to disk.",
     "format:write": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
-    "graphql-codegen": "graphql-codegen --config ./graphql.config.json",
     "?info": "Print info about npm scripts",
     "info": "npm-scripts-info",
     "?lint": "Lint source files.",
@@ -38,10 +37,8 @@
   "homepage": "https://github.com/cohere-ai/test-1#readme",
   "dependencies": {
     "@babel/core": "7.18.10",
-    "@graphql-codegen/cli": "^2.11.6",
-    "@graphql-yoga/node": "^2.13.6",
-    "@pothos/core": "^3.14.0",
     "@svgr/webpack": "^6.3.1",
+    "@tanstack/react-query": "^4.12.0",
     "@tailwindcss/forms": "^0.5.2",
     "@types/lodash": "4.14.182",
     "@types/node": "18.7.4",
@@ -56,8 +53,6 @@
     "del-cli": "5.0.0",
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5",
-    "graphql": "^16.5.0",
-    "graphql-tag": "^2.12.6",
     "lodash": "4.17.21",
     "next": "12.2.5",
     "npm-run-all": "4.1.5",
@@ -68,12 +63,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "^3.0.24",
-    "typescript": "4.7.4",
-    "urql": "^2.2.3",
-    "@graphql-codegen/urql-introspection": "2.2.1",
-    "@graphql-codegen/typescript-operations": "2.5.3",
-    "@graphql-codegen/typescript": "2.7.3",
-    "@graphql-codegen/introspection": "2.2.1",
-    "@graphql-codegen/typescript-urql": "3.6.4"
+    "typescript": "4.7.4"
   }
 }

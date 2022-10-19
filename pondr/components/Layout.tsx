@@ -39,10 +39,6 @@ const Main: React.FC<{ children?: React.ReactNode; className?: string }> = ({
   </main>
 );
 
-// const Footer: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
-//   <footer className={classNames('col-start-2 row-start-3', 'p-4')}>{children}</footer>
-// );
-
 interface LayoutProps {
   children?: React.ReactNode;
   className?: string;
@@ -63,7 +59,6 @@ const Layout: React.FC<LayoutProps> = ({ children, className, use100vh = true })
         </Link>
       </Header>
       <Main className={className}>{children}</Main>
-      {/* <Footer></Footer> */}
     </Grid>
   );
 

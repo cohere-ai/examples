@@ -16,13 +16,10 @@ const QuestionPage: React.FC<Props> = () => {
   const setting = router.query.setting as string;
   const model = router.query.model as string | undefined;
 
-  const {
-    question,
-    fetching: _fetching,
-    error,
-  } = useCohereQuestion({ relationship: relationship as Relationship, setting, depth, model }, [
-    questionNumber,
-  ]);
+  const { question, error } = useCohereQuestion(
+    { relationship: relationship as Relationship, setting, depth, model },
+    [questionNumber],
+  );
 
   const [isFlipped, setIsFlipped] = useState(false);
   useEffect(() => {
@@ -77,7 +74,7 @@ const QuestionPage: React.FC<Props> = () => {
     setIsFlipped(true);
   };
 
-  if (error) return <p>Oh no... {error.message}</p>;
+  if (error) return <p>Oh no... {JSON.stringify(error)}</p>;
 
   return (
     <Layout className="bg-purple text-white">
