@@ -24,6 +24,7 @@ export const useCohereQuestion = (
       }
       return response.json();
     },
+    { enabled: typeof relationship !== 'undefined' && typeof setting !== 'undefined' },
   );
 
   return { question: data?.question, isLoading, error };
