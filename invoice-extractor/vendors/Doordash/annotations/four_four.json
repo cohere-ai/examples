@@ -1,0 +1,19 @@
+{
+    "Address": [
+        "11 E 7th St, New York, NY 10003, USA"
+    ],
+    "Date": [
+        "August 9, 2022 at 2:37 PM"
+    ],
+    "Tax": [
+        "2.38"
+    ],
+    "Total": [
+        "23.12"
+    ],
+    "Order": [
+        "Popcorn chicken appetizer",
+        "Beef Roll",
+        "Signature Braised Tofu"
+    ]
+}

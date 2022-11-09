@@ -1,0 +1,58 @@
+Tax Invoice
+United States
+ 
+Invoice issued by UBER RASIER CANADA INC.
+on behalf of:
+Samad Choudhury
+Canada
+GST Registration Number: 826-337-198-
+RT0001
+Invoice number:  
+JBSXEMAV-03-2022-0000263
+Invoice date:  
+Aug 21, 2022
+ 
+ 
+Tax Point Date 
+Description 
+Qty 
+Tax 
+Tax amount 
+Net amount 
+Aug 21, 2022 
+Transportation service fare 
+1 
+HST 13%
+$1.15
+$8.92 
+Aug 21, 2022 
+Booking fee 
+1 
+HST 13%
+$0.36
+$2.75 
+Aug 21, 2022 
+Wait Time 
+1 
+HST 13%
+$0.02
+$0.17 
+Aug 21, 2022 
+Temporary fuel surcharge 
+1 
+HST 13%
+$0.07
+$0.50 
+ 
+Total net amount 
+$12.34 
+ 
+Total HST 13%
+$1.60 
+ 
+Total amount payable 
+$13.94 
+Issued on behalf of Samad Choudhury by:
+UBER RASIER CANADA INC. / 
+[CA] / 
+GST: 764945663RC0001
