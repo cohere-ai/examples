@@ -99,9 +99,8 @@ def construct_prompt(texts, annotations, field, test_text):
     separator = "\n=====\n"
     for text, annotation in zip(texts[:MAX_EXAMPLES], annotations[:MAX_EXAMPLES]):
         prompt = text + "\n"
-        value_list = annotation[field]
         anno_prompt = f"\n{field}: "
-        anno_prompt += ", ".join(value_list)
+        anno_prompt += annotation[field]
         prompt += anno_prompt
         prompts.append(prompt)
     return separator.join(prompts) + "\n=====\n" + test_text + f"\n\n{field}:"

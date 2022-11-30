@@ -1,1 +1,7 @@
-{"Date": ["August 25, 2022"], "Total": ["18.23"], "Tax": ["1.49"], "Order": ["Crab Meat with Pork Meat Soup Dumplings"], "Address": ["52 Bowery, New York, NY 10013, US"]}
+{
+    "Date": "August 25, 2022",
+    "Total": "18.23",
+    "Tax": "1.49",
+    "Order": "Crab Meat with Pork Meat Soup Dumplings",
+    "Address": "52 Bowery, New York, NY 10013, US"
+}

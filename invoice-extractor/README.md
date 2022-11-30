@@ -130,7 +130,7 @@ to_tensor = transforms.ToTensor()
 cos = nn.CosineSimilarity(dim=1, eps=1e-6)
 ```
 
-Let's compute similarity score. We create a function `get_template_name` which iterate on each template image and compute similarity score with the target image that we want to predict with. Then it will output the name of the template it classified.
+Let's compute similarity score. We create a function `get_vendor_name` which iterate on each template image and compute similarity score with the target image that we want to predict with. Then it will output the name of the template it classified.
 
 ```
 # Returns image embedding given image path

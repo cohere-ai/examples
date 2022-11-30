@@ -1,1 +1,6 @@
-{"Total Amount Payable": ["12.58"], "Total Net Amount": ["11.13"], "Invoice Number": ["GDFCDIHG-03-2022-0000408"], "Date": [" Jul 18, 2022"]}
+{
+    "Total Amount Payable": "12.58",
+    "Total Net Amount": "11.13",
+    "Invoice Number": "GDFCDIHG-03-2022-0000408",
+    "Date": "Jul 18, 2022"
+}

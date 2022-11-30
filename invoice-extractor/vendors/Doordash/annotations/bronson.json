@@ -1,18 +1,7 @@
 {
-    "Address": [
-        "250 Mulberry St, New York, NY 10012, USA"
-    ],
-    "Date": [
-        "June 26, 2022 at 1:01 PM"
-    ],
-    "Total": [
-        "18.47"
-    ],
-    "Tax": [
-        "1.60"
-    ],
-    "Order": [
-        "Crispy Chicken Sammie Crispy Onions, Ripe Tomatoes",
-        "Sweet Potato Fries"
-    ]
+    "Address": "250 Mulberry St, New York, NY 10012, USA",
+    "Date": "June 26, 2022 at 1:01 PM",
+    "Total": "18.47",
+    "Tax": "1.60",
+    "Order": "Crispy Chicken Sammie Crispy Onions, Ripe Tomatoes, Sweet Potato Fries"
 }
