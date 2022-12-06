@@ -2,7 +2,7 @@ name: Deploy Streamlit App multilingual-movies-recommendation-engine
 
 on:
   push:
-    branches: [main]
+    branches: [amr-multilingual-movies]
     paths:
       - multilingual-movies-recommendation-engine/**
 
