@@ -1,0 +1,43 @@
+name: Deploy Streamlit App multilingual-movies-recommendation-engine
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - multilingual-movies-recommendation-engine/**
+
+jobs:
+  deploy-multilingual-movies-recommendation-engine:
+    name: Deploy multilingual-movies-recommendation-engine
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        id: checkout
+        uses: actions/checkout@v2
+
+      - name: Create app.yaml
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: multilingual-movies-recommendation-engine/app.yaml.jinja
+          output_file: multilingual-movies-recommendation-engine/app.yaml
+          strict: true
+          variables: |
+            COHERE_API_KEY=${{ secrets.COHERE_API_KEY }}
+            # This will replace variables in the .jinja file. Add all the variables here.
+
+      - name: Auth
+        id: auth
+        uses: google-github-actions/auth@v0
+        with:
+          credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+
+      - name: Deploy
+        id: deploy
+        uses: google-github-actions/deploy-appengine@v0
+        with:
+          deliverables: multilingual-movies-recommendation-engine/app.yaml
+
+      - name: Healthcheck
+        id: curl-api
+        run: curl "${{ steps.deploy.outputs.url }}/healthz"

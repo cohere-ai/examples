@@ -1,0 +1,16 @@
+runtime: python
+env: flex
+service: multilingual-movies-recommendation-engine
+
+runtime_config:
+  python_version: 3
+
+entrypoint: streamlit run movies.py --server.port 8081
+
+automatic_scaling:
+  max_num_instances: 1
+
+env_variables:
+  # Check the environment variables this streamlit expects. Here we assume that it expects the cohere api key to be stored in the variable CO_KEY
+  COHERE_API_KEY: {{ COHERE_API_KEY }}
+  # More environment variables go here
