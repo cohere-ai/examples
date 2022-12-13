@@ -1,6 +1,7 @@
 name: Deploy Streamlit App "Article Recommender"
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:

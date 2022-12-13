@@ -1,6 +1,7 @@
 name: Deploy Streamlit App "Toxic Rephraser"
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:

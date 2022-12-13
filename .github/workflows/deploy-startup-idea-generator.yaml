@@ -1,6 +1,7 @@
 name: Deploy Streamlit App "Startup Idea Generator"
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
