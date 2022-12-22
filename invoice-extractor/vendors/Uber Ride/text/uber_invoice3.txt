@@ -1,0 +1,51 @@
+Tax Invoice
+United States
+ 
+Invoice issued by UBER RASIER CANADA INC.
+on behalf of:
+Mohammad Riaz
+Canada
+GST Registration Number: 829105782RT0001
+Invoice number:  
+BSYAORHE-03-2022-0000922
+Invoice date:  
+Jul 17, 2022
+ 
+ 
+Tax Point Date 
+Description 
+Qty 
+Tax 
+Tax amount 
+Net amount 
+Jul 17, 2022 
+Transportation service fare 
+1 
+HST 13%
+$1.01
+$7.84 
+Jul 17, 2022 
+Booking fee 
+1 
+HST 13%
+$0.36
+$2.75 
+Jul 17, 2022 
+Temporary fuel surcharge 
+1 
+HST 13%
+$0.07
+$0.50 
+ 
+Total net amount 
+$11.09 
+ 
+Total HST 13%
+$1.44 
+ 
+Total amount payable 
+$12.53 
+Issued on behalf of Mohammad Riaz by:
+UBER RASIER CANADA INC. / 
+[CA] / 
+GST: 764945663RC0001
