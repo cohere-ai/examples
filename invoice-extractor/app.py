@@ -12,7 +12,7 @@ from utils import get_vendor_name, parse_data, parse_annotations, construct_prom
 
 import cohere
 
-api_key = os.environ["API_KEY"]
+api_key = os.environ["COHERE_API_KEY"]
 co = cohere.Client(api_key)
 
 st.set_page_config(page_title="Template Gallery",layout="wide")

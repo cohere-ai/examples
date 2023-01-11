@@ -1,4 +1,4 @@
-name: Deploy Streamlit App "YOUR APP NAME HERE"
+name: Deploy Streamlit App "Invoice Extractor"
 
 on:
   push:
