@@ -36,7 +36,7 @@ jobs:
         id: deploy
         uses: google-github-actions/deploy-appengine@v0
         with:
-          deliverables: PUT-YOUR-APP-NAME-HERE/app.yaml
+          deliverables: invoice-extractor/app.yaml
 
       - name: Healthcheck
         id: curl-api
