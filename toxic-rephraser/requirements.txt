@@ -1,5 +1,0 @@
-cohere
-streamlit
-numpy
-pandas
-sklearn
