@@ -1,4 +1,4 @@
-name: Deploy Streamlit App "YOUR APP NAME HERE"
+name: Deploy Streamlit App "Invoice Extractor"
 
 on:
   push:
@@ -24,7 +24,6 @@ jobs:
           strict: true
           variables: |
             COHERE_API_KEY=${{ secrets.COHERE_API_KEY }}
-            # This will replace variables in the .jinja file. Add all the variables here. 
 
       - name: Auth
         id: auth
@@ -36,7 +35,7 @@ jobs:
         id: deploy
         uses: google-github-actions/deploy-appengine@v0
         with:
-          deliverables: PUT-YOUR-APP-NAME-HERE/app.yaml
+          deliverables: invoice-extractor/app.yaml
 
       - name: Healthcheck
         id: curl-api
