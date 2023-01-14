@@ -2,7 +2,7 @@ name: Deploy Streamlit App "Invoice Extractor"
 
 on:
   push:
-    branches: [main, joon-invoice-app]
+    branches: [main]
     paths:
       - invoice-extractor/**
 
@@ -31,10 +31,9 @@ jobs:
         with:
           credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
 
-      - name: Install Linux Dependencies
+      - name: Install with apt-get
         run: apt-get install packages.txt
-	working-directory: invoice-extractor
-
+        working-directory: invoice-extractor
 
       - name: Deploy
         id: deploy
