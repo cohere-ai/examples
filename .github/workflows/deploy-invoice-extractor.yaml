@@ -1,6 +1,7 @@
 name: Deploy Streamlit App "Invoice Extractor"
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - invoice-extractor/**
