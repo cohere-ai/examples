@@ -2,7 +2,7 @@ name: Deploy Streamlit App "Invoice Extractor"
 
 on:
   push:
-    branches: [main]
+    branches: [main, joon-invoice-app]
     paths:
       - invoice-extractor/**
 
