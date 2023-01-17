@@ -71,7 +71,7 @@ def extract_invoice(idx, test_image_paths):
       for field in fields:
           prompt = construct_prompt(texts, annotations, field, test_text)
           response = co.generate(
-              model='small',
+              model='medium',
               prompt=prompt,
               max_tokens=50,
               temperature=0.3,
