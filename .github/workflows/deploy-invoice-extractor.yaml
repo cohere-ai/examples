@@ -1,6 +1,7 @@
 name: Deploy Streamlit App "Invoice Extractor"
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
@@ -30,6 +31,10 @@ jobs:
         uses: google-github-actions/auth@v0
         with:
           credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+
+      - name: Install with apt-get
+        run: apt-get install packages.txt
+        working-directory: invoice-extractor
 
       - name: Deploy
         id: deploy
