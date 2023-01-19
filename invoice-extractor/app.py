@@ -6,7 +6,7 @@ import glob
 import os
 from PyPDF2 import PdfReader
 from PIL import Image
-from pdf2image import convert_from_path
+import fitz
 
 from utils import get_vendor_name, parse_data, parse_annotations, construct_prompt
 
@@ -33,7 +33,8 @@ for test_invoice in test_invoices:
     file_name = base_name.split(".")[0]
 
     # Convert first page of uploaded pdf to image
-    image = convert_from_path(test_invoice)[0]
+    doc = fitz.open(test_invoice)  # open document
+    image = doc[0].get_pixmap()  # render page to an image
     image_path = os.path.join(test_image_dir, f"{file_name}.jpg")
     image.save(image_path, 'JPEG')
     with open(image_path, 'rb') as f:
