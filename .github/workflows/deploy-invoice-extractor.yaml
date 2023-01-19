@@ -32,10 +32,6 @@ jobs:
         with:
           credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
 
-      - name: Install with apt-get
-        run: apt-get install packages.txt
-        working-directory: invoice-extractor
-
       - name: Deploy
         id: deploy
         uses: google-github-actions/deploy-appengine@v0
