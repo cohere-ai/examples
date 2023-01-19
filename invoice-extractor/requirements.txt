@@ -6,5 +6,4 @@ torchvision
 torchaudio
 numpy
 PyPDF2
-pymupdf
 st-clickable-images
