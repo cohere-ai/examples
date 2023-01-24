@@ -1,5 +1,4 @@
 streamlit
-python-poppler
 cohere
 pillow
 torch
@@ -7,5 +6,4 @@ torchvision
 torchaudio
 numpy
 PyPDF2
-pdf2image
 st-clickable-images

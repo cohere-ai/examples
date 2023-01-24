@@ -6,13 +6,12 @@ import glob
 import os
 from PyPDF2 import PdfReader
 from PIL import Image
-from pdf2image import convert_from_path
 
 from utils import get_vendor_name, parse_data, parse_annotations, construct_prompt
 
 import cohere
 
-api_key = os.environ["API_KEY"]
+api_key = os.environ["COHERE_API_KEY"]
 co = cohere.Client(api_key)
 
 st.set_page_config(page_title="Template Gallery",layout="wide")
@@ -33,9 +32,7 @@ for test_invoice in test_invoices:
     file_name = base_name.split(".")[0]
 
     # Convert first page of uploaded pdf to image
-    image = convert_from_path(test_invoice)[0]
     image_path = os.path.join(test_image_dir, f"{file_name}.jpg")
-    image.save(image_path, 'JPEG')
     with open(image_path, 'rb') as f:
         image_content = f.read()
         encoded = base64.b64encode(image_content).decode()
@@ -71,7 +68,7 @@ def extract_invoice(idx, test_image_paths):
       for field in fields:
           prompt = construct_prompt(texts, annotations, field, test_text)
           response = co.generate(
-              model='small',
+              model='medium',
               prompt=prompt,
               max_tokens=50,
               temperature=0.3,
