@@ -1,80 +1,33 @@
-# Examples
-A central repo where many demos using the Cohere API will live.
+# Application Examples
+A repository for demos showcased on Cohere's [Application Examples page](https://docs.cohere.ai/page/application-examples).
 
-## How to add a new Streamlit project
+The list of demos:
 
-1. Create a new folder for your app
-2. Inside the app folder, create a file named `app.yaml.jinja`
-The contents of that file should look like this:
+## Topic Modeler
+Surface the main topics from a large collection of text documents.
 
-```
-runtime: python
-env: flex
-service: PUT-YOUR-APP-NAME-HERE
+[Guide](https://docs.cohere.ai/page/topic-modeling) | [Code](https://github.com/cohere-ai/examples/tree/main/topic-modeling)
 
-runtime_config:
-  python_version: 3
+## Lazywriter
+Surface the main topics from a large collection of text documents.
 
-entrypoint: streamlit run PUT-YOUR-APP-MAIN-FILE-NAME-HERE.py --server.port $PORT
+[Guide](https://docs.cohere.ai/page/lazywriter) | [Code]([###])
 
-automatic_scaling:
-  max_num_instances: 1
+## Pondr
+Generate interesting conversation questions that turn strangers into friends.
 
-env_variables:
-  # Check the environment variables this streamlit expects. Here we assume that it expects the cohere api key to be stored in the variable CO_KEY
-  CO_KEY: {{ COHERE_API_KEY }}
-  # More environment variables go here
+[Guide](https://docs.cohere.ai/page/pondr) | [Code](https://github.com/cohere-ai/examples/tree/main/pondr)
 
-```
 
-3. In the root of the repository there is a directory called `./github/workflows/` inside that directory create a file `deploy-PUT-YOUR-APP-NAME-HERE.yaml`
-The contents of that file should look like this:
+## News Article Recommender
+Recommend other similar articles to the one a user is reading.
 
-```
-name: Deploy Streamlit App "YOUR APP NAME HERE"
+[Guide](https://docs.cohere.ai/page/news-article-recommender) | [Code](https://github.com/cohere-ai/examples/tree/main/article-recommender)
 
-on:
-  push:
-    branches: [main]
-    paths:
-      - PUT-YOUR-APP-NAME-HERE/**
 
-jobs:
-  deploy-PUT-YOUR-APP-NAME-HERE:
-    name: Deploy YOUR APP NAME HERE
-    runs-on: ubuntu-latest
+## Invoice Extractor
+Extract information from invoices and receipts automatically.
 
-    steps:
-      - name: Checkout Code
-        id: checkout
-        uses: actions/checkout@v2
+[Guide](https://docs.cohere.ai/page/invoice-extractor) | [Code](https://github.com/cohere-ai/examples/tree/main/invoice-extractor)
 
-      - name: Create app.yaml
-        uses: cuchi/jinja2-action@v1.2.0
-        with:
-          template: PUT-YOUR-APP-NAME-HERE/app.yaml.jinja
-          output_file: PUT-YOUR-APP-NAME-HERE/app.yaml
-          strict: true
-          variables: |
-            COHERE_API_KEY=${{ secrets.COHERE_API_KEY }}
-            # This will replace variables in the .jinja file. Add all the variables here. 
 
-      - name: Auth
-        id: auth
-        uses: google-github-actions/auth@v0
-        with:
-          credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
-
-      - name: Deploy
-        id: deploy
-        uses: google-github-actions/deploy-appengine@v0
-        with:
-          deliverables: PUT-YOUR-APP-NAME-HERE/app.yaml
-
-      - name: Healthcheck
-        id: curl-api
-        run: curl "${{ steps.deploy.outputs.url }}/healthz"
-
-```
-
-4. More environment variables can be added by updating the `env_variables` section of app.yaml.jinja and the `Create app.yaml` step of the github workflow.
