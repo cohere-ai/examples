@@ -8,10 +8,6 @@ Surface the main topics from a large collection of text documents.
 
 [Guide](https://docs.cohere.ai/page/topic-modeling) | [Code](https://github.com/cohere-ai/examples/tree/main/topic-modeling)
 
-## Lazywriter
-Surface the main topics from a large collection of text documents.
-
-[Guide](https://docs.cohere.ai/page/lazywriter) | [Code]([###])
 
 ## Pondr
 Generate interesting conversation questions that turn strangers into friends.
