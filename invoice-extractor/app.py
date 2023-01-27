@@ -1,3 +1,11 @@
+# Copyright (c) 2023 Cohere Inc. and its affiliates.
+#
+# Licensed under the MIT License (the "License");
+# you may not use this file except in compliance with the License.
+#
+# You may obtain a copy of the License in the LICENSE file at the top
+# level of this repository.
+
 import streamlit as st
 from st_clickable_images import clickable_images
 
@@ -5,7 +13,6 @@ import base64
 import glob
 import os
 from PyPDF2 import PdfReader
-from PIL import Image
 
 from utils import get_vendor_name, parse_data, parse_annotations, construct_prompt
 
@@ -14,15 +21,15 @@ import cohere
 api_key = os.environ["COHERE_API_KEY"]
 co = cohere.Client(api_key)
 
-st.set_page_config(page_title="Template Gallery",layout="wide")
+st.set_page_config(page_title="Template Gallery", layout="wide")
 
 test_pdf_dir = os.path.join("test_set", "pdf")
 test_image_dir = os.path.join("test_set", "images")
 
-test_invoices = glob.glob(os.path.join(test_pdf_dir, '*'))
+test_invoices = glob.glob(os.path.join(test_pdf_dir, "*"))
 test_invoices.sort()
 
-test_image_list  = []
+test_image_list = []
 test_image_paths = []
 
 st.markdown("# Select Invoice to Extract!")
@@ -33,17 +40,19 @@ for test_invoice in test_invoices:
 
     # Convert first page of uploaded pdf to image
     image_path = os.path.join(test_image_dir, f"{file_name}.jpg")
-    with open(image_path, 'rb') as f:
+    with open(image_path, "rb") as f:
         image_content = f.read()
         encoded = base64.b64encode(image_content).decode()
         test_image_list.append(f"data:image/jpeg;base64,{encoded}")
     test_image_paths.append(image_path)
 
-test_clicked = clickable_images(test_image_list,
+test_clicked = clickable_images(
+    test_image_list,
     titles=test_image_paths,
     div_style={"display": "flex", "justify-content": "start", "overflow-x": "auto"},
     img_style={"margin": "5px", "height": "500px"},
 )
+
 
 def extract_invoice(idx, test_image_paths):
     # Get template name by running image classification
@@ -63,24 +72,26 @@ def extract_invoice(idx, test_image_paths):
 
     col1, col2 = st.columns(2)
     with col1:
-      st.image(test_image_paths[idx])
+        st.image(test_image_paths[idx])
     with col2:
-      for field in fields:
-          prompt = construct_prompt(texts, annotations, field, test_text)
-          response = co.generate(
-              model='medium',
-              prompt=prompt,
-              max_tokens=50,
-              temperature=0.3,
-              k=0,
-              p=1,
-              frequency_penalty=0,
-              presence_penalty=0,
-              stop_sequences=["====="],
-              return_likelihoods='NONE')
-          st.markdown(f"### {field}:{response.generations[0].text[:-5]}")
-      st.markdown("### Finished Extracting")
+        for field in fields:
+            prompt = construct_prompt(texts, annotations, field, test_text)
+            response = co.generate(
+                model="medium",
+                prompt=prompt,
+                max_tokens=50,
+                temperature=0.3,
+                k=0,
+                p=1,
+                frequency_penalty=0,
+                presence_penalty=0,
+                stop_sequences=["====="],
+                return_likelihoods="NONE",
+            )
+            st.markdown(f"### {field}:{response.generations[0].text[:-5]}")
+        st.markdown("### Finished Extracting")
     return template
+
 
 # Classify template name
 if test_clicked > -1:

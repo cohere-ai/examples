@@ -1,0 +1,29 @@
+Here are examples of tweets based on the subject.
+
+
+Subject: New Facebook Ads  
+
+Generate Text: If you aren't using the new Facebook Ads reporting, you're missing out. A huge improvement from the previous version (@glenngabe)
+
+
+----
+
+
+Subject:  Liverpool
+
+Generate Text: Jürgen Klopp offered an update on the conditions of several members of his squad ahead of our Premier League opener at Fulham 🗣
+#FULLIV
+
+----
+
+Subject:  South By Southwest
+
+Generate Text:  #ICYMI Registration and Housing are now open! Start your #SXSW adventure today and register before 11:59pm PT on September 15 for the biggest savings of the season.
+
+----
+
+Subject:   Cohere and NLP Summarization
+
+Generate Text:  Whats Up! NLP friends! Every day, we have to deal with reports, emails, meeting notes. A language AI summarizer can help you take back control. This preset takes in a piece of text and generates its TLDR. Experiment with it on our Playground here: https://hubs.li/Q01jd25T0
+
+----

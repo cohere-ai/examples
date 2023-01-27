@@ -1,0 +1,21 @@
+Given a name this program generates a soccer player profile and soccer stats.
+
+
+Player:  Lionel Messi  
+Profile:  born 24 June 1987), also known as Leo Messi, is an Argentine professional footballer who plays as a forward for Ligue 1 club Paris Saint-Germain and captains the Argentina national team. Often considered the best player in the world and widely regarded as one of the greatest players of all time, Messi has won a record seven Ballon d'Or awards, a record six European Golden Shoes, and in 2020 was named to the Ballon d'Or Dream Team. Until leaving the club in 2021, he had spent his entire professional career with Barcelona, where he won a club-record 35 trophies, including ten La Liga titles, seven Copa del Rey titles and four UEFA Champions Leagues. A prolific goalscorer and creative playmaker, Messi holds the records for most goals in La Liga (474), a La Liga and European league season (50), most hat-tricks in La Liga (36) and the UEFA Champions League (8), and most assists in La Liga (192), a La Liga season (21) and the Copa América (17). He also holds the record for most international goals by a South American male (86). Messi has scored over 750 senior career goals for club and country, and has the most goals by a player for a single club.
+
+
+
+
+---
+
+Player:  Luis Suarez
+Profile: Born 24 January 1987) is a Uruguayan professional footballer who plays as a striker for Uruguayan Primera División club Nacional and the Uruguay national team. Nicknamed El Pistolero ('The Gunman'),he is known for his passing, finishing and comfort with the ball. Suárez is regarded as one of the best players of his generation and one of the greatest strikers of all time. Suárez has won two European Golden Shoes, an Eredivisie Golden Boot, a Premier League Golden Boot, and the Pichichi Trophy. He has scored over 500 career goals for club and country.
+
+Suárez began his senior club career at Nacional in 2005. At age 19, he signed for Groningen, before transferring to Ajax in 2007. There, he won the KNVB Cup. In 2011, Suárez signed for Premier League club Liverpool, and won the League Cup in his first full season. In 2014, he equalled the goalscoring record for a 38-game Premier League season and won his first European Golden Shoe. That summer, Suárez moved to Barcelona in a transfer worth £64.98 million (€82.3 million), making him one of the most expensive players.
+
+Dubbed MSN, Suárez was part of a dominant trio alongside Lionel Messi and Neymar, winning the treble of La Liga, the Copa del Rey and the UEFA Champions League in his first season. In his second season, he won the Pichichi Trophy and his second European Golden Shoe, becoming the first player since 2009 to win both awards other than Messi or Cristiano Ronaldo. He also led La Liga in assists, becoming the first player to do so in both goals and assists in league history. With Barcelona, Suárez won ten additional trophies, including three La Liga titles and three Copas del Rey. He signed for Atlético Madrid in 2020, winning his fifth La Liga title in his debut season.
+
+At international level, Suárez is Uruguay's all-time leading goalscorer, and has represented his nation at three editions of the FIFA World Cup and four editions of the Copa América, as well as the 2012 Summer Olympics and the 2013 FIFA Confederations Cup. He was named in the 2010 World Cup All-Star Team and won the 2011 Copa América, where he was awarded Best Player. Outside of his football credentials, Suárez has been a source of controversy throughout his career,[note 2] including a goal-line handball against Ghana at the 2010 FIFA World Cup, biting opponents on three occasions,[note 3] accusations of and admitting to diving, and being found guilty by the FA in 2011 of racially abusing Patrice Evra.
+
+---
