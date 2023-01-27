@@ -1,7 +1,15 @@
+# Copyright (c) 2023 Cohere Inc. and its affiliates.
+#
+# Licensed under the MIT License (the "License");
+# you may not use this file except in compliance with the License.
+#
+# You may obtain a copy of the License in the LICENSE file at the top
+# level of this repository.
+
 import numpy as np
 import pandas as pd
-import streamlit as st
 import recommender as rec
+import streamlit as st
 
 st.set_page_config(layout="wide")
 

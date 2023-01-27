@@ -23,7 +23,7 @@ Recommend other similar articles to the one a user is reading.
 ## Startup Idea Generator
 Generate a startup idea and name, given an industry.
 
-[Guide](https://docs.cohere.ai/page/startup-idea-generator) | [Code](https://github.com/cohere-ai/examples/tree/main/startup-idea-generator)
+[Guide](https://docs.cohere.ai/page/startup-idea-generator) | Code
 
 ## Lazywriter
 Write content for blogs, product descriptions, and other use cases.
