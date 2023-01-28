@@ -9,7 +9,6 @@
 import cohere
 import streamlit as st
 import os
-import textwrap
 
 # Cohere API key
 api_key = os.environ["CO_KEY"]
@@ -27,28 +26,28 @@ def generate_idea(industry, temperature):
   Returns:
     response(str): the startup idea
   """
-    base_idea_prompt = textwrap.dedent(
-        """
-    This program generates a startup idea given the industry.
+    base_idea_prompt = """This program generates a startup idea given the industry.
 
-    Industry: Workplace
-    Startup Idea: A platform that generates slide deck contents automatically based on a given outline
+--
+Industry: Workplace
+Startup Idea: A platform that generates slide deck contents automatically based on a given outline
 
-    --
-    Industry: Home Decor
-    Startup Idea: An app that calculates the best position of your indoor plants for your apartment
+--
+Industry: Home Decor
+Startup Idea: An app that calculates the best position of your indoor plants for your apartment
 
-    --
-    Industry: Healthcare
-    Startup Idea: A hearing aid for the elderly that automatically adjusts its levels and with a battery lasting a whole week
+--
+Industry: Healthcare
+Startup Idea: A hearing aid for the elderly that automatically adjusts its levels and with a battery \
+lasting a whole week
 
-    --
-    Industry: Education
-    Startup Idea: An online primary school that lets students mix and match their own curriculum based on their interests and goals
+--
+Industry: Education
+Startup Idea: An online primary school that lets students mix and match their own curriculum based on \
+their interests and goals
 
-    --
-    Industry:"""
-    )
+--
+Industry:"""
 
     # Call the Cohere Generate endpoint
     response = co.generate(
@@ -77,28 +76,29 @@ def generate_name(idea, temperature):
   Returns:
     response(str): the startup name
   """
-    base_name_prompt = textwrap.dedent(
-        """
-    This program generates a startup name and name given the startup idea.
 
-    Startup Idea: A platform that generates slide deck contents automatically based on a given outline
-    Startup Name: Deckerize
+    base_name_prompt = """This program generates a startup name and name given the startup idea.
 
-    --
-    Startup Idea: An app that calculates the best position of your indoor plants for your apartment
-    Startup Name: Planteasy
+--
+Startup Idea: A platform that generates slide deck contents automatically based on a given outline
+Startup Name: Deckerize
 
-    --
-    Startup Idea: A hearing aid for the elderly that automatically adjusts its levels and with a battery lasting a whole week
-    Startup Name: Hearspan
+--
+Startup Idea: An app that calculates the best position of your indoor plants for your apartment
+Startup Name: Planteasy
 
-    --
-    Startup Idea: An online primary school that lets students mix and match their own curriculum based on their interests and goals
-    Startup Name: Prime Age
+--
+Startup Idea: A hearing aid for the elderly that automatically adjusts its levels and with a battery \
+lasting a whole week
+Startup Name: Hearspan
 
-    --
-    Startup Idea:"""
-    )
+--
+Startup Idea: An online primary school that lets students mix and match their own curriculum based on \
+their interests and goals
+Startup Name: Prime Age
+
+--
+Startup Idea:"""
 
     # Call the Cohere Generate endpoint
     response = co.generate(
