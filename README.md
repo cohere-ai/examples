@@ -23,12 +23,12 @@ Recommend other similar articles to the one a user is reading.
 ## Startup Idea Generator
 Generate a startup idea and name, given an industry.
 
-[Guide](https://docs.cohere.ai/page/startup-idea-generator) | Code
+[Guide](https://docs.cohere.ai/page/startup-idea-generator) | [Code](https://github.com/cohere-ai/examples/tree/main/startup-idea-generator)
 
 ## Lazywriter
 Write content for blogs, product descriptions, and other use cases.
 
-[Guide](https://docs.cohere.ai/page/invoice-extractor) | Code
+[Guide](https://docs.cohere.ai/page/lazywriter) | [Code](https://github.com/cohere-ai/examples/tree/main/lazywriter)
 
 ## Pondr
 Generate interesting conversation questions that turn strangers into friends.
