@@ -34,3 +34,7 @@ Write content for blogs, product descriptions, and other use cases.
 Generate interesting conversation questions that turn strangers into friends.
 
 [Guide](https://docs.cohere.ai/page/pondr) | [Code](https://github.com/cohere-ai/examples/tree/main/pondr)
+
+## Document Question Answering
+Generate answers to questions about a passage of text.
+[Guide](https://docs.cohere.ai/page/document-question-answering) | [Code](https://github.com/cohere-ai/examples/tree/main/document-qa)
