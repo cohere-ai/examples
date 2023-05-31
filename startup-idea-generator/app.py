@@ -17,16 +17,16 @@ api_key = os.environ["CO_KEY"]
 co = cohere.Client(api_key)
 
 
-def generate_idea(industry, temperature):
+def generate_idea(startup_industry, creativity):
     """
-  Generate startup idea given an industry name
-  Arguments:
+    Generate startup idea given an industry name
+    Arguments:
     industry(str): the industry name
     temperature(str): the Generate model `temperature` value
-  Returns:
+    Returns:
     response(str): the startup idea
-  """
-    base_idea_prompt = """This program generates a startup idea given the industry.
+    """
+    idea_prompt = f"""Generate a startup idea given the industry. Here are a few examples.
 
 --
 Industry: Workplace
@@ -47,37 +47,38 @@ Startup Idea: An online primary school that lets students mix and match their ow
 their interests and goals
 
 --
-Industry:"""
+Industry:{startup_industry}
+Startup Idea: """
 
     # Call the Cohere Generate endpoint
     response = co.generate(
-        model="xlarge",
-        prompt=base_idea_prompt + " " + industry + "\nStartup Idea: ",
+        model="command-nightly",
+        prompt=idea_prompt,
         max_tokens=50,
-        temperature=temperature,
+        temperature=creativity,
         k=0,
-        p=0.7,
-        frequency_penalty=0.1,
-        presence_penalty=0,
         stop_sequences=["--"],
     )
     startup_idea = response.generations[0].text
+    print(idea_prompt)
+    print("startup_idea - pre", startup_idea)
     startup_idea = startup_idea.replace("\n\n--", "").replace("\n--", "").strip()
-
+    print("startup_idea - post", startup_idea)
+    print("-------------")
     return startup_idea
 
 
-def generate_name(idea, temperature):
+def generate_name(startup_idea, creativity):
     """
-  Generate startup name given a startup idea
-  Arguments:
+    Generate startup name given a startup idea
+    Arguments:
     idea(str): the startup idea
     temperature(str): the Generate model `temperature` value
-  Returns:
+    Returns:
     response(str): the startup name
-  """
+    """
 
-    base_name_prompt = """This program generates a startup name and name given the startup idea.
+    name_prompt = f"""Generate a startup name and name given the startup idea. Here are a few examples.
 
 --
 Startup Idea: A platform that generates slide deck contents automatically based on a given outline
@@ -98,18 +99,16 @@ their interests and goals
 Startup Name: Prime Age
 
 --
-Startup Idea:"""
+Startup Idea:{startup_idea}
+Startup Name:"""
 
     # Call the Cohere Generate endpoint
     response = co.generate(
-        model="xlarge",
-        prompt=base_name_prompt + " " + idea + "\nStartup Name:",
+        model="command-nightly",
+        prompt=name_prompt,
         max_tokens=10,
-        temperature=temperature,
+        temperature=creativity,
         k=0,
-        p=0.7,
-        frequency_penalty=0,
-        presence_penalty=0,
         stop_sequences=["--"],
     )
     startup_name = response.generations[0].text
@@ -161,8 +160,8 @@ with form:
 
             for i in range(num_input):
                 st.markdown("""---""")
-                startup_idea = generate_idea(industry_input, creativity_input)
-                startup_name = generate_name(startup_idea, creativity_input)
-                st.markdown("##### " + startup_name)
-                st.write(startup_idea)
+                idea = generate_idea(industry_input, creativity_input)
+                name = generate_name(idea, creativity_input)
+                st.markdown("##### " + name)
+                st.write(idea)
                 my_bar.progress((i + 1) / num_input)
