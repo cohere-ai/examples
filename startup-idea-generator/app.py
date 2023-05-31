@@ -78,7 +78,7 @@ def generate_name(startup_idea, creativity):
     response(str): the startup name
     """
 
-    name_prompt = f"""Generate a startup name and name given the startup idea.
+    name_prompt = f"""Generate a startup name and name given the startup idea. Here are a few examples.
 
 --
 Startup Idea: A platform that generates slide deck contents automatically based on a given outline
