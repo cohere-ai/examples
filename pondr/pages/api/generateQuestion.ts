@@ -259,12 +259,12 @@ const generateQuestion = async (req: NextApiRequest, res: NextApiResponse) => {
   const fiveQuestions = parseFiveQuestionsFromGeneration(generations.body['generations']);
 
   const classificationsInterestingness = await cohere.classify({
-    model: 'medium',
+    model: 'embed-english-v2.0',
     examples: INTERESTINGNESS_EXAMPLES,
     inputs: fiveQuestions,
   });
   const classificationsSpecificity = await cohere.classify({
-    model: 'medium',
+    model: 'embed-english-v2.0',
     examples: SPECIFICITY_EXAMPLES,
     inputs: fiveQuestions,
   });
